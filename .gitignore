@@ -1,0 +1,46 @@
+# Dependências
+node_modules/
+
+# Build de produção
+dist/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+bun-debug.log*
+
+# Ambiente
+.env
+.env.local
+.env.*.local
+
+# Editor e sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Cache
+*.log
+*.lock
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+bun.lockb
+
+# Testes
+coverage/
+*.lcov
+
+# Vite
+.vite/
+.cache/
+vite.config.ts.timestamp*
+vite.config.js.timestamp*
+
+# Arquivos temporários do sistema
+*.swp
+*.swo
+*.tmp
