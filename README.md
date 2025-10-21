@@ -15,9 +15,13 @@ Uma aplicação web desenvolvida com **React + Vite** para calcular o **Índice 
 ## 📋 Funcionalidades
 
 ✅ Cálculo IMC com base no peso e altura informados  
+
 ✅ Exibição da classificação  
+
 ✅ Interface simples
+
 ✅ Botão para limpar o formulário  
+
 ✅ Tabela dinâmica com as faixas de IMC  
 
 ---
