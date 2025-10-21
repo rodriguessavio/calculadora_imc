@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 import './App.css'
 
-import './data/data.js'
+import {data} from './data/data.js'
 
 function App() {
 
@@ -17,10 +17,27 @@ function App() {
     const weightFloat = +weight.replace(',', '.'); 
     const heightFloat = +height.replace(',', '.');
 
-    const imc = (weightFloat / (heightFloat * heightFloat)).toFixed(1);
+    const imcResult = (weightFloat / (heightFloat * heightFloat)).toFixed(1);
 
-    setImc(imc);
+    setImc(imcResult);
 
+    data.forEach((item) => {
+      if(imcResult >= item.min && imcResult <= item.max) {
+        setInfo(item.info);
+        setInfoClass(item.infoClass);
+      }
+    });
+
+    if(!info) return;
+
+
+  }
+
+  const resetCalc = (e) => {
+    e.preventDefault();
+    setImc("");
+    setInfo("");
+    setInfoClass("");
   }
 
   const [imc, setImc] = useState("");
@@ -28,8 +45,8 @@ function App() {
   const [infoClass, setInfoClass] = useState("");
 
   return (
-    <div className='Container'>
-      {!imc ? <ImcCalc calcImc = {calcImc}/> : <ImcTable />}
+    <div className='container'>
+      {!imc ? <ImcCalc calcImc = {calcImc}/> : <ImcTable data = {data} imc={imc} infoClass={infoClass} info={info} resetCalc={resetCalc}/>}
     </div>
   )
 }
